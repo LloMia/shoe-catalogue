@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="shoe_catalogue.css">
+    <meta charset="utf-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+    <title></title>
+    <h1>Mi Casa</h1>
+    <h2>SNEAKERS</h2>
+  </head>
+  <body>
+    <form method="get">
+    <input list="list" name="list" class="list" >
+    <datalist id="list">
+      <option value="Nike">
+      <option value="Converse">
+      <option value="Vans">
+      <option value="Adidas">
+      <option value="Puma">
+    </datalist><br><br>
+
+    <script id = "output" type="text/x-handlebars-template">
+      <table>
+          <thead>
+            <th>brand</th>
+            <th>color</th>
+            <th>size</th>
+            <th>in store</th>
+          </thead>
+          <tbody>
+            {{#each dataStock}}
+              <tr>
+                <td>{{brand}}</td>
+                <td>{{color}}</td>
+                <td>{{sizes}}</td>
+                <td>{{inStock}}</td>
+              </tr>
+              {{/each}}
+          </tbody>
+        </table>
+    </script>
+
+<ul id = "added">  </ul>
+<p id="display"></p>
+
+  </form>
+<script src="shoe catalogue.js" charset="utf-8"> </script>
+  </body>
+</html>
