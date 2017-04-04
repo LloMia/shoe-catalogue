@@ -10,41 +10,44 @@
     <h2>SNEAKERS</h2>
   </head>
   <body>
-    <form method="get">
-    <input list="list" name="list" class="list" >
+<input id="option" list="list" placeholder="choose brand">
     <datalist id="list">
-      <option value="Nike">
-      <option value="Converse">
-      <option value="Vans">
-      <option value="Adidas">
-      <option value="Puma">
+      <option id="Nike" name="Nike">Nike</option>
+      <option id="Converse" name="Converse">Converse</option>
+      <option id="Vans" name="Vans">Vans</option>
+      <option id="Adidas" name="Adidas">Adidas</option>
+      <option id="Puma" name="Puma">Puma</option>
     </datalist><br><br>
 
-    <script id = "output" type="text/x-handlebars-template">
-      <table>
-          <thead>
+    <button onclick ="search()" class = "search">Search</button><br><br>
+
+    <div id="display">
+      <script id = "output" type="text/x-handlebars-template">
+        <table>
+          <tr>
             <th>brand</th>
             <th>color</th>
             <th>size</th>
             <th>in store</th>
-          </thead>
-          <tbody>
-            {{#each dataStock}}
-              <tr>
-                <td>{{brand}}</td>
-                <td>{{color}}</td>
-                <td>{{sizes}}</td>
-                <td>{{inStock}}</td>
-              </tr>
-              {{/each}}
-          </tbody>
-        </table>
-    </script>
+          </tr>
+
+
+          {{#each stock}}
+            <tr>
+              <td>{{brand}}</td>
+              <td>{{color}}</td>
+              <td>{{sizes}}</td>
+              <td>{{inStock}}</td>
+            </tr>
+
+          {{/each}}
+      </table>
+
+      </script>
+    </div>
 
 <ul id = "added">  </ul>
-<p id="display"></p>
 
-  </form>
 <script src="shoe catalogue.js" charset="utf-8"> </script>
   </body>
 </html>
