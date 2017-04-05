@@ -10,14 +10,36 @@
     <h2>SNEAKERS</h2>
   </head>
   <body>
-<input id="option" list="list" placeholder="choose brand">
-    <datalist id="list">
+<select id="option1" list="list" placeholder="choose brand">
+
       <option id="Nike" name="Nike">Nike</option>
       <option id="Converse" name="Converse">Converse</option>
       <option id="Vans" name="Vans">Vans</option>
       <option id="Adidas" name="Adidas">Adidas</option>
       <option id="Puma" name="Puma">Puma</option>
-    </datalist><br><br>
+    </select><br><br>
+
+    <select id="option2" list="list1" placeholder="choose color">
+          <option id="blue and white" name="blue and white">blue and white</option>
+          <option id="black" name="black">black</option>
+          <option id="white" name="white">white</option>
+          <option id="black and white" name="black and white">black and white</option>
+        </select><br><br>
+
+        <select id="option3" list="list2" placeholder="choose size">
+              <option id="1" name="1">1</option>
+              <option id="2" name="2">2</option>
+              <option id="3" name="3">3</option>
+              <option id="4" name="4">4</option>
+              <option id="5" name="6">5</option>
+              <option id="5" name="5">5</option>
+              <option id="6" name="6">6</option>
+              <option id="7" name="7">7</option>
+              <option id="8" name="8">8</option>
+              <option id="9" name="9">9</option>
+              <option id="10" name="10">10</option>
+            </select><br><br>
+
 
     <button onclick ="search()" class = "search">Search</button><br><br>
 
@@ -29,6 +51,7 @@
             <th>color</th>
             <th>size</th>
             <th>in store</th>
+            <th>Price</th>
           </tr>
 
 
@@ -38,6 +61,7 @@
               <td>{{color}}</td>
               <td>{{sizes}}</td>
               <td>{{inStock}}</td>
+              <td> R {{Price}}</td>
             </tr>
 
           {{/each}}
