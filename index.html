@@ -10,6 +10,8 @@
     <h2>SNEAKERS</h2>
   </head>
   <body>
+
+    <div id="user">
 <select id="option1" list="list" placeholder="choose brand">
 
       <option id="Nike" name="Nike">Nike</option>
@@ -42,7 +44,29 @@
 
 
     <button onclick ="search()" class = "search">Search</button><br><br>
+  <!--/div>
 
+  <div class="container">
+  <label><b>Username</b></label>
+  <input type="text" placeholder="Enter Username" id="uname" required>
+
+  <label><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" id="psw" required>
+
+  <button class="button" onclick = 'showHideStock()'>Login</button><br><br><br><br><br>
+
+
+  <div id="owner"-->
+
+  <input id="brand" type="text" value="" placeholder=" enter brand"><br><br>
+  <input id="color" type="text" value="" placeholder=" enter color"><br><br>
+  <input id="size" type="text" value="" placeholder=" enter size"><br><br>
+  <input id="Price" type="text" value="" placeholder=" enter Price"><br><br>
+
+    <br><br><button id ="show" type = "add" onclick="addStock()">Add Stock</button><br><br>
+
+
+</div>
     <div id="display">
       <script id = "output" type="text/x-handlebars-template">
         <table>
@@ -70,8 +94,15 @@
       </script>
     </div>
 
-<ul id = "added">  </ul>
 
-<script src="shoe catalogue.js" charset="utf-8"> </script>
+
   </body>
+
+  <footer>
+
+
+
+
+  </footer>
+  <script src="shoe catalogue.js" charset="utf-8"> </script>
 </html>
