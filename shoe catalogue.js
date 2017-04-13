@@ -1,4 +1,4 @@
-var input = document.querySelectorAll('#option');
+//var input = document.querySelectorAll('#option');
 var output = document.querySelector('#display');
 var option1 = document.getElementById('option1');
 var option2 = document.getElementById('option2');
@@ -7,7 +7,7 @@ var counter = 0;
 var user = document.getElementById('user')
 var owner = document.getElementById('owner')
 
-function showHideStock(){
+/*function showHideStock(){
   counter ++;
 
   if (counter % 2 == 0){
@@ -16,7 +16,7 @@ function showHideStock(){
 else{
   owner.style.display='block'
 }
-}
+}*/
 
 
 var stock = [
@@ -26,6 +26,7 @@ var stock = [
   {brand : "Converse", color : "blue and white", inStock : 45, sizes : 9, Price : 999 },
   {brand : "Adidas", color : "black", inStock : 30, sizes :  7, Price : 1499},
   {brand : "Nike", color: "white", inStock : 89, sizes : 8, Price : 1799}
+
 
 ];
 
@@ -43,13 +44,14 @@ var template = Handlebars.compile(source);
       availStock.push(stock[i]);
     }
 
-
   }
 
-  var newStock = template ({
-    availStock
-  })
-    output.innerHTML = newStock;
+  // var newStock = template ({
+  //   availStock: availStock
+  // })
+    output.innerHTML = template ({
+      stock: availStock
+    });
 };
 
 
@@ -76,15 +78,43 @@ return false;
 };*/
 
 function addStock(){
+  var allStock = []
   var brandInput = document.getElementById('brand').value
   var colorInput = document.getElementById('color').value
   var sizesInput = document.getElementById('size').value
   var priceInput = document.getElementById('Price').value
-
-  var freshStock = JSON.stringify({
+  var brandName = document.querySelectorAll('.brandName')
+  var colorName = document.querySelectorAll('.colorName')
+  var newColor
+  var check1 = [];
+  var freshStock = {
     brand : brandInput, color : colorInput, Price : priceInput, sizes : sizesInput
+  }
+stock.push(freshStock)
+}
+
+function uniqueBrandName(){
+  var source2 = document.getElementById('newBrandOption1').innerHTML;
+  var mytemplate = Handlebars.compile(source2);
+
+
+
+  var brandList = []
+  var brandType = {}
+  for (var a = 0; a < stock.length; a ++ ){
+    if (brandType[stock[a].brand === undefined]){
+      brandType[stock[a].brand] = stock[a].brand
+      brandList.push(stock[a].brand)
+    }
+  }
+  brandName.innerHTML = mytemplate({
+
+    newBrand: brandList
+
   })
-  availStock = freshStock
-  stock.push(availStock);
-output.innerHTML = freshStock
+
+}
+
+function uniqueColorName(){
+
 }

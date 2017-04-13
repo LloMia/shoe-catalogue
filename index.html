@@ -14,18 +14,26 @@
     <div id="user">
 <select id="option1" list="list" placeholder="choose brand">
 
-      <option id="Nike" name="Nike">Nike</option>
-      <option id="Converse" name="Converse">Converse</option>
-      <option id="Vans" name="Vans">Vans</option>
-      <option id="Adidas" name="Adidas">Adidas</option>
-      <option id="Puma" name="Puma">Puma</option>
+      <option class ="brandName" name="Nike">Nike</option>
+      <option class ="brandName" name="Converse">Converse</option>
+      <option class ="brandName" name="Vans">Vans</option>
+      <option class ="brandName" name="Adidas">Adidas</option>
+      <option class ="brandName" name="Puma">Puma</option>
+      <script id ="newBrandOption1"  type="text/x-handlebars-template">
+        {{#each newBrand}}
+       <option class="brandName" name ={{newBrand}}>{{this}}</option>
+       {{/each}}
+      </script>
     </select><br><br>
 
     <select id="option2" list="list1" placeholder="choose color">
-          <option id="blue and white" name="blue and white">blue and white</option>
-          <option id="black" name="black">black</option>
-          <option id="white" name="white">white</option>
-          <option id="black and white" name="black and white">black and white</option>
+          <option class ="colorName" name="blue and white">blue and white</option>
+          <option class ="colorName" name="black">black</option>
+          <option class ="colorName" name="white">white</option>
+          <option class ="colorName" name="black and white">black and white</option>
+          <script id ="newBrandOption2"  type="text/x-handlebars-template">
+           <option class="colorName" name ={{newColor}}>{{color}}</option>
+          </script>
         </select><br><br>
 
         <select id="option3" list="list2" placeholder="choose size">
@@ -79,7 +87,7 @@
           </tr>
 
 
-          {{#each availStock}}
+          {{#each stock}}
             <tr>
               <td>{{brand}}</td>
               <td>{{color}}</td>
