@@ -129,7 +129,10 @@ function search(){
   if (brandOption.value !== ''){
     var b = stock.filter(brandF); //new stock with select brand
   }
-
+  else{
+    alert("please select at least one option!!")
+   output.innerHTML = ' ';
+  }
 
   function colorF(input) {
     return input.color == colorOption.value
@@ -147,4 +150,33 @@ function search(){
      stock: b
    });
   output.innerHTML = print;
+
+  if (b === undefined){
+    output.innerHTML = " "
+  }
 };
+
+ function hide(){
+   var hide = document.querySelector('.addStock')
+ if(hide.style.display === 'none') {
+ hide.style.display = 'block';
+   }
+   else{
+     hide.style.display = 'none';
+   }
+ }
+
+/*var slides=0;
+ mySlideShow();
+
+ function mySlideShow() {
+    //  var mySlides = document.querySelectorAll("mySlides");
+     for (var i = 0; i < mySlides.length; i++) {
+        mySlides[i].style.display = "none";
+     }
+     slides++;
+     if (slides > mySlides.length) {slides = 1}
+     mySlides[slides-1].style.display = "block";
+     setTimeout(mySlideShow, 2000); // Change image every 2 seconds
+ }
+*/

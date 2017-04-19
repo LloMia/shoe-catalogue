@@ -3,9 +3,26 @@
 }
 
 .addStock{
-
   padding: 1em;
   background-color: orange;
   width : 15em;
 
 }
+
+.myImage{
+  padding-left: 30%;
+  text-align: center;
+
+}
+
+h2{
+  font-style: oblique;
+  font-size: 90px;
+  padding-left: 40%;
+  margin-top: auto;
+}
+ h1{
+   font-size: 70px;
+   padding-left: 30%;
+   margin-top: auto;
+ }

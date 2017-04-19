@@ -5,6 +5,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <title></title>
     <link rel="stylesheet" href="shoe_catalogue.css">
+    <head>
+      <h1>Mi casa</h1>
+        <h2>Sneakers</h2>
+
+        <div class="myImage" style="max-width:500px">
+          <img align = "center"class="mySlides" src="image.jpg" style="width:100%">
+        </div>
+    </head>
+  <body>
+
+  <br><div class = "myStyle" align = "center">
     <script id ="newBrandOption"  type="text/x-handlebars-template">
       <option value="" disabled selected>select brand</option>
       {{#each brandOption}}
@@ -19,12 +30,18 @@
 {{/each}}
     </script>
   </head>
-  <body>
   <div id = "brandOption" class="">
 
   </div>
 
-
+  <div >
+    <select class="optionBrand"> </select>
+    <select class="optionColor"> </select>
+  </div>
+  <br><br><button onclick ="search()" class = "search">Search</button><br><br>
+  <button onclick="showAll()" class = 'show'>Show All</button>
+  <button onclick="hide()" class = 'hideBtn'>Adding Stock</button><br><br><br>
+</div>
       <div class="addStock hidden">
         <input id="brand" type="text" value="" placeholder=" enter brand"><br><br>
         <input id="color" type="text" value="" placeholder=" enter color"><br><br>
@@ -35,12 +52,6 @@
         <br><button id ="show" type = "add" onclick = "addStock()">Add Stock</button><br><br>
       </div>
 
-      <div >
-        <select class="optionBrand"> </select>
-        <select class="optionColor"> </select>
-      </div>
-      <br><br><button onclick ="search()" class = "search">Search</button><br><br>
-      <button onclick="showAll()" class = 'show'>Show All</button>
 
       <div id="display">
         <script id = "output" type="text/x-handlebars-template">
