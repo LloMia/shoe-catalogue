@@ -128,7 +128,8 @@ function search(){
   }
   if (brandOption.value !== ''){
     var b = stock.filter(brandF); //new stock with select brand
-    }
+  }
+
 
   function colorF(input) {
     return input.color == colorOption.value
@@ -141,9 +142,6 @@ function search(){
     var  b = stock.filter(brandF)
     }
 }
-
-
-
 
    var  print = template({
      stock: b
