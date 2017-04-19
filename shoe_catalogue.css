@@ -1,17 +1,11 @@
-body{
-  background-image: url("background-image.jpg");
-  background-size:cover;
-  background-attachment: fixed;
+.hidden {
+    display: none;
 }
 
-h1{
-  font-size: 550%;
-  text-align: center;
-  font-style: italic;
-}
+.addStock{
 
-h2{
-  font-size: 550%;
-  text-align: center;
+  padding: 1em;
+  background-color: orange;
+  width : 15em;
 
 }

@@ -1,116 +1,73 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--link rel="stylesheet" href="shoe_catalogue.css"-->
     <meta charset="utf-8">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <title></title>
-    <h1>Mi Casa</h1>
-    <h2>SNEAKERS</h2>
+    <link rel="stylesheet" href="test.css">
+    <script id ="newBrandOption"  type="text/x-handlebars-template">
+      <option value="" disabled selected>select brand</option>
+      {{#each brandOption}}
+        <option>{{this}}</option>
+      {{/each}}
+    </script>
+
+    <script id ="newColorOption"  type="text/x-handlebars-template">
+      <option value="" disabled selected>select color</option>
+{{#each colorOption}}
+     <option>{{this}}</option>
+{{/each}}
+    </script>
   </head>
   <body>
+  <div id = "brandOption" class="">
 
-    <div id="user">
-<select id="option1" list="list" placeholder="choose brand">
-
-      <option class ="brandName" name="Nike">Nike</option>
-      <option class ="brandName" name="Converse">Converse</option>
-      <option class ="brandName" name="Vans">Vans</option>
-      <option class ="brandName" name="Adidas">Adidas</option>
-      <option class ="brandName" name="Puma">Puma</option>
-      <script id ="newBrandOption1"  type="text/x-handlebars-template">
-        {{#each newBrand}}
-       <option class="brandName" name ={{newBrand}}>{{this}}</option>
-       {{/each}}
-      </script>
-    </select><br><br>
-
-    <select id="option2" list="list1" placeholder="choose color">
-          <option class ="colorName" name="blue and white">blue and white</option>
-          <option class ="colorName" name="black">black</option>
-          <option class ="colorName" name="white">white</option>
-          <option class ="colorName" name="black and white">black and white</option>
-          <script id ="newBrandOption2"  type="text/x-handlebars-template">
-           <option class="colorName" name ={{newColor}}>{{color}}</option>
-          </script>
-        </select><br><br>
-
-        <select id="option3" list="list2" placeholder="choose size">
-              <option id="1" name="1">1</option>
-              <option id="2" name="2">2</option>
-              <option id="3" name="3">3</option>
-              <option id="4" name="4">4</option>
-              <option id="5" name="6">5</option>
-              <option id="5" name="5">5</option>
-              <option id="6" name="6">6</option>
-              <option id="7" name="7">7</option>
-              <option id="8" name="8">8</option>
-              <option id="9" name="9">9</option>
-              <option id="10" name="10">10</option>
-            </select><br><br>
+  </div>
 
 
-    <button onclick ="search()" class = "search">Search</button><br><br>
-  <!--/div>
+      <div class="addStock hidden">
+        <input id="brand" type="text" value="" placeholder=" enter brand"><br><br>
+        <input id="color" type="text" value="" placeholder=" enter color"><br><br>
+        <input id="size" type="text" value="" placeholder=" enter size"><br><br>
+        <input id="Price" type="text" value="" placeholder=" enter Price"><br><br>
+        <input id="inStock" type="text" value="" placeholder=" enter number of stock"><br><br>
 
-  <div class="container">
-  <label><b>Username</b></label>
-  <input type="text" placeholder="Enter Username" id="uname" required>
+        <br><button id ="show" type = "add" onclick = "addStock()">Add Stock</button><br><br>
+      </div>
 
-  <label><b>Password</b></label>
-  <input type="password" placeholder="Enter Password" id="psw" required>
+      <div >
+        <select class="optionBrand"> </select>
+        <select class="optionColor"> </select>
+      </div>
+      <br><br><button onclick ="search()" class = "search">Search</button><br><br>
+      <button onclick="showAll()" class = 'show'>Show All</button>
 
-  <button class="button" onclick = 'showHideStock()'>Login</button><br><br><br><br><br>
-
-
-  <div id="owner"-->
-
-  <input id="brand" type="text" value="" placeholder=" enter brand"><br><br>
-  <input id="color" type="text" value="" placeholder=" enter color"><br><br>
-  <input id="size" type="text" value="" placeholder=" enter size"><br><br>
-  <input id="Price" type="text" value="" placeholder=" enter Price"><br><br>
-
-    <br><br><button id ="show" type = "add" onclick="addStock()">Add Stock</button><br><br>
-
-
-</div>
-    <div id="display">
-      <script id = "output" type="text/x-handlebars-template">
-        <table>
-          <tr>
-            <th>brand</th>
-            <th>color</th>
-            <th>size</th>
-            <th>in store</th>
-            <th>Price</th>
-          </tr>
-
-
-          {{#each stock}}
+      <div id="display">
+        <script id = "output" type="text/x-handlebars-template">
+          <table>
             <tr>
-              <td>{{brand}}</td>
-              <td>{{color}}</td>
-              <td>{{sizes}}</td>
-              <td>{{inStock}}</td>
-              <td> R {{Price}}</td>
+              <th>brand</th>
+              <th>color</th>
+              <th>size</th>
+              <th>in store</th>
+              <th>Price</th>
             </tr>
 
-          {{/each}}
-      </table>
 
+            {{#each stock}}
+              <tr>
+                <td>{{stockBrand}}</td>
+                <td>{{color}}</td>
+                <td>{{sizes}}</td>
+                <td>{{inStock}}</td>
+                <td> R {{Price}}</td>
+              </tr>
+
+            {{/each}}
+        </table>
       </script>
-    </div>
-
-
 
   </body>
+  <script type = "text/javascript" src = "test.js"> </script>
 
-  <footer>
-
-
-
-
-  </footer>
-  <script src="shoe catalogue.js" charset="utf-8"> </script>
 </html>
