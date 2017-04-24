@@ -25,4 +25,23 @@ h2{
    font-size: 70px;
    padding-left: 30%;
    margin-top: auto;
+
  }
+
+
+ table{
+   width: 55%;
+   /*height: 50px;*/
+   border-collapse: collapse;
+   border-color: black;
+
+ }
+
+td{
+  border: 3px solid black;
+}
+
+th{
+  height: 10%;
+  border: 4px solid black;
+}
